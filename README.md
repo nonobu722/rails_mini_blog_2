@@ -1,24 +1,25 @@
-# README
+# ミニブログ Part.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使い方
+Gitからリポジトリをクローンする
 
-Things you may want to cover:
+モジュールをインストール
+```
+yarn install
+```
 
-* Ruby version
+RubyGemsをインストール
+```
+$ bundle install
+```
 
-* System dependencies
+DBのマイグレーション
 
-* Configuration
+```
+$ rails db:migrate
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+サーバーを起動
+```
+$ rails server
+```
