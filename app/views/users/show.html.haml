@@ -1,0 +1,13 @@
+%h1
+  ユーザ
+%h4
+  ユーザ名:
+  = @user.name
+  %br
+  - if @user.profile
+    プロフィール：
+    = @user.profile
+    %br
+  - if @user.blog_url
+    ブログURL：
+    = @user.blog_url

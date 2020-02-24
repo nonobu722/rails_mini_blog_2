@@ -1,6 +1,8 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
   .collapse.navbar-collapse#navbarNav
     %ul.navbar-nav.ml-auto
+      %li.nav-item
+        = link_to 'ユーザ一覧', users_path, class: 'nav-link'
       - if user_signed_in?
         %li.nav-item
           = link_to '新規投稿', new_post_path, class: 'nav-link'

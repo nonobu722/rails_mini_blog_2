@@ -1,0 +1,8 @@
+%h1
+  ユーザ一覧
+%table
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to user.name, user_path(user.id)
