@@ -9,6 +9,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, success: '投稿が完了しました'
+    else
+      flash.now[:alert] = '投稿は140字以内で入力してください'
+      render :new
+    end
   end
 
   private
