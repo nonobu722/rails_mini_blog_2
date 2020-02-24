@@ -23,7 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Use haml instead of erb
 gem 'haml-rails'
-
+gem 'erb2haml'
+# Use for Authentication
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

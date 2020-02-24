@@ -1,0 +1,33 @@
+%h1
+  ユーザ情報編集
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field.pt-3
+    = f.label :name, 'ユーザ名', class:'control-label'
+    %br/
+    = f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control'
+  .field.pt-3
+    = f.label :password, 'パスワード', class:'control-label'
+    %i (変更しない時は空にしてください)
+    %br/
+    = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+  .field.pt-3
+    = f.label :password_confirmation, 'パスワード確認', class:'control-label'
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+  .field.pt-3
+    = f.label :current_password, '現在のパスワード(確認のため現在のパスワードを入力してください)', class:'control-label'
+    %br/
+    = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
+  .field.pt-3
+    = f.label :profile, 'プロフィール', class:'control-label'
+    %br/
+    = f.text_field :profile, autofocus: true, autocomplete: "profile", class: 'form-control'
+  .field.pt-3
+    = f.label :blog_url, 'ブログURL', class:'control-label'
+    %br/
+    = f.url_field :blog_url, autofocus: true, autocomplete: "blog_url", class: 'form-control'
+  .actions.pt-3
+    = f.submit "更新", class: 'btn btn-primary' 
+    %br/
+= link_to "戻る", :back
