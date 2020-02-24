@@ -1,4 +1,4 @@
-%h1.pt-5 パスワードを忘れましたか？
+%h1 パスワードを忘れましたか？
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field.pt-3

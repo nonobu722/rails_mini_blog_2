@@ -1,0 +1,11 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .collapse.navbar-collapse#navbarNav
+    %ul.navbar-nav.ml-auto
+      - if user_signed_in?
+        %li.nav-item
+          = link_to '新規投稿', new_post_path, class: 'nav-link'
+        %li.nav-item
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+      - else
+        %li.nav-item
+          = link_to 'ログイン', new_user_session_path, class: 'nav-link'
