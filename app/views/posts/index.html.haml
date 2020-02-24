@@ -10,7 +10,7 @@
     - @posts.each do |post|
       %tr
         %td.card.card-body.mt-3
-          = post.created_at
+          = l(post.created_at, format: :default)
           %br
           = post.content
           
