@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+
+  validates :name, uniqueness: true, presence: true, length: { in: 1..20 },
+            format: { with: /\A[a-zA-Z]+\z/ }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
