@@ -2,9 +2,6 @@
   全体タイムライン
 %h5.pt-2
   = link_to '新規投稿', new_post_path
-.notifications
-  - flash.each do |key, value|
-    = content_tag(:div, value, class: key)
 %table
   %tbody
     - @posts.each do |post|

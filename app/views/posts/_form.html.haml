@@ -1,7 +1,4 @@
 = form_with model: post, local: true do |form|
-  .notifications
-    - flash.each do |key, value|
-      = content_tag(:div, value, class: key)
   .field.pt-3
     = form.label :content, '投稿内容', class:'control-label'
     = form.text_field :content, class: 'form-control'
