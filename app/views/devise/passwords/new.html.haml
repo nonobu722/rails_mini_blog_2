@@ -1,0 +1,10 @@
+%h1.pt-5 パスワードを忘れましたか？
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field.pt-3
+    = f.label :name, 'ユーザー名', class:'control-label'
+    %br/
+    = f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control'
+  .actions.pt-3
+    = f.submit "送信", class: 'btn btn-primary' 
+= render "devise/shared/links"
