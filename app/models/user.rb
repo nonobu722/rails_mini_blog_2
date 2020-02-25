@@ -10,6 +10,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :authentication_keys => [:name]
 
   has_many :posts
+  has_many :active_followers, class_name: "Follower", foreign_key: "follow_id", dependent: :destroy
+  has_many :passive_followers, class_name: "Follower", foreign_key: "followed_id", dependent: :destroy
+  has_many :following, through: :active_followers, source: :followed
+  has_many :followers, through: :passive_followers, source: :follower
 
   def email_required?
     false
