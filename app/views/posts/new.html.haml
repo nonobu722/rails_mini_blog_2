@@ -1,5 +1,5 @@
 %h1
-  新規投稿
+  = t('views.post.new')
 = render 'form', post: @post
 %br
-= link_to '戻る', posts_path
+= link_to t('views.buttons.back'), posts_path

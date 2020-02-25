@@ -1,13 +1,16 @@
 %h1
-  ユーザプロフィール
+  = t('views.user.show')
 %h4
-  ユーザ名:
+  = t('activerecord.attributes.user.name')
+  ：
   = @user.name
   %br
   - if @user.profile
-    プロフィール：
+    = t('activerecord.attributes.user.profile')
+    ：
     = @user.profile
     %br
   - if @user.blog_url
-    ブログURL：
+    = t('activerecord.attributes.user.blog_url')
+    ：
     = @user.blog_url

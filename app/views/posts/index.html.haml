@@ -1,11 +1,11 @@
 %h1
-  全体タイムライン
+  = t('views.top')
 %table
   %tbody
     - @posts.each do |post|
       %tr
         %td.card.card-body.mt-3
-          = l(post.created_at, format: :default)
+          = l(post.created_at, format: :long)
           %br
           = post.content
           

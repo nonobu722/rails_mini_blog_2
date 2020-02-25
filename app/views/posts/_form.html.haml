@@ -1,6 +1,6 @@
 = form_with model: post, local: true do |form|
   .field.pt-3
-    = form.label :content, '投稿内容', class:'control-label'
-    = form.text_field :content, class: 'form-control'
+    = form.label :content, class:'control-label'
+    = form.text_area :content, class: 'form-control'
   .actions.pt-3
-    = form.submit '投稿', class: 'btn btn-primary'
+    = form.submit t('views.buttons.post'), class: 'btn btn-primary'

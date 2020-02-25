@@ -22,10 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use haml instead of erb
-gem 'haml-rails'
-gem 'erb2haml'
+gem 'haml-rails', '~> 2.0'
+gem 'erb2haml', '~> 0.1'
 # Use for Authentication
-gem 'devise'
+gem 'devise', '~> 4.7'
+gem 'devise-i18n', '~> 1.9'
+gem 'devise-i18n-views', '~> 0.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
