@@ -1,6 +1,6 @@
-require "test_helper"
+require 'test_helper'
 
-class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase # rubocop:disable all
   # test "connects with cookies" do
   #   cookies.signed[:user_id] = 42
   #

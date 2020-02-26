@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts
   devise_for :users
-  resources :users, :only => [:index, :show]
+  resources :users, only: %i[index show]
 end

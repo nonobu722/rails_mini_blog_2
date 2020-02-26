@@ -1,10 +1,22 @@
-AllCops:
-  Exclude:
-    - db/schema.rb
-    - config/unicorn.rb
-    - config/unicorn_staging.rb
-    - tmp/**/*
+require:
+  - rubocop-rails
 
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - app/channels/**/*
+    - node_modules/**/*
+    - bin/*
+    - spec/**/*
+    - lib/*
+    - lib/tasks/*
+    - db/migrate/*
+    - db/schema.rb
+    - public/*
+    - tmp/*
+    - vendor/**/*
+    - config/spring.rb
+    
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -17,5 +29,14 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
   
-Documentation:
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Rails/FilePath:
   Enabled: false
