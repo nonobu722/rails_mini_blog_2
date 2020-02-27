@@ -1,0 +1,14 @@
+%h1
+  = t('views.user.follow_list')
+%table
+  %tbody
+    - @users.each do |user|
+      - user.posts.each do |post|
+        %tr
+          %td.card.card-body.mt-3
+            = link_to user.name, user_path(user.id)
+            = l(post.created_at, format: :long)
+            %br
+            = post.content
+            %br
+                  

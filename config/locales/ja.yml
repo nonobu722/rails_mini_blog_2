@@ -33,6 +33,7 @@ ja:
     user: 
       index: ユーザ一覧
       show: ユーザプロフィール
+      follow_list: あなたのタイムライン
     post:
       new: 新規投稿
     buttons:
@@ -46,6 +47,7 @@ ja:
       users: ユーザ一覧
       new_post: 新規投稿
       edit_user: ユーザ情報編集
+      follow_list: あなたのタイムライン
       post: 投稿
       follow: フォローする
       unfollow: フォローをやめる

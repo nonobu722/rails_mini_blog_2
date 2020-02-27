@@ -7,6 +7,8 @@
         = link_to t('views.buttons.users'), users_path, class: 'nav-link'
       - if user_signed_in?
         %li.nav-item
+          = link_to t('views.buttons.follow_list'), followed_user_path(current_user.id), class: 'nav-link'     
+        %li.nav-item
           = link_to t('views.buttons.new_post'), new_post_path, class: 'nav-link'
         %li.nav-item
           = link_to t('views.buttons.edit_user'), edit_user_registration_path, class: 'nav-link'
