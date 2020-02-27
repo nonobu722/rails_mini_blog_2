@@ -13,8 +13,8 @@ class User < ApplicationRecord
   has_many :active_followers, class_name: 'Follower', foreign_key: 'follow_id', dependent: :destroy
   has_many :passive_followers, class_name: 'Follower', foreign_key: 'followed_id', dependent: :destroy
   # rubocop:enable all
-  has_many :following, through: :active_followers, source: :followed
-  has_many :follows, through: :passive_followers, source: :follow
+  has_many :followed, through: :active_followers
+  has_many :follow, through: :passive_followers
 
   def email_required?
     false
@@ -26,5 +26,17 @@ class User < ApplicationRecord
 
   def will_save_change_to_email?
     false
+  end
+
+  def follow(other_user)
+    active_followers.create(followed_id: other_user.id)
+  end
+
+  def unfollow(other_user)
+    active_followers.find_by(followed_id: other_user.id).destroy
+  end
+
+  def followed?(other_user)
+    followed.include?(other_user)
   end
 end

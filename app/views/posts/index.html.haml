@@ -5,7 +5,18 @@
     - @posts.each do |post|
       %tr
         %td.card.card-body.mt-3
+          = link_to post.user.name, user_path(post.user.id)
           = l(post.created_at, format: :long)
           %br
           = post.content
-          
+          %br
+          - if user_signed_in? && post.user.id != current_user.id
+            .pt-2
+              - if current_user.followed?(post.user)
+                = form_for(current_user.active_followers.find_by(followed_id: post.user.id), html: { method: :delete }) do |f|
+                  = f.submit t('views.buttons.unfollow'), class: 'btn btn-secondary btn-sm'
+              - else
+                = form_for(current_user.active_followers.build) do |f|
+                  = hidden_field_tag :followed_id, post.user.id
+                  = f.submit t('views.buttons.follow'), class: 'btn btn-primary btn-sm'
+                  

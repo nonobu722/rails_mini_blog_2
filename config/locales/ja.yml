@@ -20,6 +20,7 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
   views:
+    home: ホーム
     top: 全体タイムライン
     devise:
       info: 
@@ -46,6 +47,8 @@ ja:
       new_post: 新規投稿
       edit_user: ユーザ情報編集
       post: 投稿
+      follow: フォローする
+      unfollow: フォローをやめる
   notice:
     new_post: 投稿が完了しました
   alert:
