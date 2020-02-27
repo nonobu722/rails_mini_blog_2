@@ -2,14 +2,18 @@
   .collapse.navbar-collapse#navbarNav
     %ul.navbar-nav.ml-auto
       %li.nav-item
-        = link_to 'ユーザ一覧', users_path, class: 'nav-link'
+        = link_to t('views.buttons.home'), root_path, class: 'nav-link'
+      %li.nav-item
+        = link_to t('views.buttons.users'), users_path, class: 'nav-link'
       - if user_signed_in?
         %li.nav-item
-          = link_to '新規投稿', new_post_path, class: 'nav-link'
+          = link_to t('views.buttons.follow_list'), followed_user_path(current_user.id), class: 'nav-link'     
         %li.nav-item
-          = link_to 'ユーザ情報編集', edit_user_registration_path, class: 'nav-link'
+          = link_to t('views.buttons.new_post'), new_post_path, class: 'nav-link'
         %li.nav-item
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+          = link_to t('views.buttons.edit_user'), edit_user_registration_path, class: 'nav-link'
+        %li.nav-item
+          = link_to t('views.buttons.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
         %li.nav-item
-          = link_to 'ログイン', new_user_session_path, class: 'nav-link'
+          = link_to  t('views.buttons.login'), new_user_session_path, class: 'nav-link'

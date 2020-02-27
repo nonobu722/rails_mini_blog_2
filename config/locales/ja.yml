@@ -1,5 +1,95 @@
 ja:
+  activerecord:
+    models:
+      user: ユーザ
+      post: 投稿
+    attributes:
+      user:
+        name: ユーザ名
+        password: パスワード
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+        profile: プロフィール
+        blog_url: ブログURL
+      post:
+        content: 投稿内容
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  views:
+    home: ホーム
+    top: 全体タイムライン
+    devise:
+      info: 
+        not_change: (変更しない時は空にしてください)
+        confirmation: (確認のため現在のパスワードを入力してください)
+      registrations:
+        edit: ユーザ情報編集
+        signup: サインアップ
+        login: ログイン
+    user: 
+      index: ユーザ一覧
+      show: ユーザプロフィール
+      follow_list: あなたのタイムライン
+    post:
+      new: 新規投稿
+    buttons:
+      create: 登録
+      update: 更新
+      submit: 保存
+      back: 戻る
+      signup: サインアップ
+      login: ログイン
+      logout: ログアウト
+      users: ユーザ一覧
+      new_post: 新規投稿
+      edit_user: ユーザ情報編集
+      follow_list: あなたのタイムライン
+      post: 投稿
+      follow: フォローする
+      unfollow: フォローをやめる
+  notice:
+    new_post: 投稿が完了しました
+  alert:
+    new_post: 投稿は140字以内で入力してください 
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: 'バリデーションに失敗しました: %{errors}'
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      other_than: は%{count}以外の値にしてください
+      present: は入力しないでください
+      required: を入力してください
+      taken: はすでに存在します
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
   time:
     formats:
-      default: ! "%Y/%m/%d %H:%M"
-      
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+    

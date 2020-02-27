@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+
   protected
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_id, :name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:profile, :blog_url])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[user_id name])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[profile blog_url])
   end
 end

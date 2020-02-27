@@ -13,15 +13,16 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to posts_path, notice: '投稿が完了しました'
+      redirect_to posts_path, notice: t('notice.new_post')
     else
-      flash.now[:alert] = '投稿は140字以内で入力してください'
+      flash.now[:alert] = t('alert.new_post')
       render :new
     end
   end
 
   private
-    def post_params
-      params.require(:post).permit(:content)
-    end
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end
