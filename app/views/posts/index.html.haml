@@ -13,10 +13,20 @@
           - if user_signed_in? && post.user.id != current_user.id
             .pt-2
               - if current_user.followed?(post.user)
-                = form_for(current_user.active_followers.find_by(followed_id: post.user.id), html: { method: :delete }) do |f|
+                = form_for(current_user.active_followers.find_by(followed_id: post.user.id), method: :delete ) do |f|
                   = f.submit t('views.buttons.unfollow'), class: 'btn btn-secondary btn-sm'
               - else
                 = form_for(current_user.active_followers.build) do |f|
                   = hidden_field_tag :followed_id, post.user.id
                   = f.submit t('views.buttons.follow'), class: 'btn btn-primary btn-sm'
+            .pt-2
+              - if post.favorited?(current_user)
+                = form_for(post.favorites.find_by(user_id: current_user.id), method: :delete) do |f|
+                  = f.submit t('views.post.unfavorite'), class: 'btn btn-secondary btn-sm'
+              - else
+                = form_for(post.favorites.build) do |f|
+                  = hidden_field_tag :post_id, post.id
+                  = f.submit t('views.post.favorite'), class: 'btn btn-primary btn-sm'
+            .pt-2
+              = t('views.post.favorite_count', :count => post.favorites.count )
                   

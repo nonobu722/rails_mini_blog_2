@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :followers, only: %i[create destroy]
+  resources :favorites, only: %i[create destroy]
 end

@@ -15,6 +15,7 @@ class User < ApplicationRecord
   # rubocop:enable all
   has_many :followed, through: :active_followers
   has_many :follow, through: :passive_followers
+  has_many :favorites, dependent: :destroy
 
   def email_required?
     false
