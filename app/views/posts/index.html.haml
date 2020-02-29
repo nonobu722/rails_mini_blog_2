@@ -27,6 +27,6 @@
                 = form_for(post.favorites.build) do |f|
                   = hidden_field_tag :post_id, post.id
                   = f.submit t('views.post.favorite'), class: 'btn btn-primary btn-sm'
-            .pt-2
-              = t('views.post.favorite_count', :count => post.favorites.count )
+          .pt-2
+            = link_to t('views.post.favorite_count', :count => post.favorites.count ), post_path(post.user.id)
                   

@@ -36,9 +36,11 @@ ja:
       follow_list: あなたのタイムライン
     post:
       new: 新規投稿
+      show: 投稿詳細
       favorite: いいね
       unfavorite: いいねをやめる
-      favorite_count: いいねした人数：%{count}人
+      favorite_count: いいね：%{count}人
+      favorite_list: いいねしたユーザ一覧
     buttons:
       create: 登録
       update: 更新

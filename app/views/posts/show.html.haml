@@ -1,0 +1,18 @@
+%h1
+  = t('views.post.show')
+%table
+  %tbody
+  %tr
+    = @post.user.name
+    %br
+    = l(@post.created_at, format: :long)
+    %br
+    = @post.content
+    %br
+    .pt-5
+      = t('views.post.favorite_list')
+    - @post.favorited_users.each do |user|
+      %tr
+        %td
+          = link_to user.name, user_path(user.id)
+                  
