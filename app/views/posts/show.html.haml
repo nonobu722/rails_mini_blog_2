@@ -1,18 +1,31 @@
 %h1
   = t('views.post.show')
+.pt-3
+  = @post.user.name
+  %br
+  = l(@post.created_at, format: :long)
+  %br
+  = @post.content
+  %br
+%h5.pt-3
+  = t('views.post.favorite_list')
+- @post.favorited_users.each do |user|
+  %tr
+    %td
+      = link_to user.name, user_path(user.id)
+%h5.pt-3
+  = t('views.post.comment_list')
 %table
   %tbody
-  %tr
-    = @post.user.name
-    %br
-    = l(@post.created_at, format: :long)
-    %br
-    = @post.content
-    %br
-    .pt-5
-      = t('views.post.favorite_list')
-    - @post.favorited_users.each do |user|
+    - @post.comments.each do |comment|
       %tr
-        %td
-          = link_to user.name, user_path(user.id)
-                  
+        %td.card.card-body.mt-3
+          = link_to comment.user.name, user_path(comment.user.id)
+          = comment.content
+          %br
+- if user_signed_in?
+  .pt-3
+    = form_with(model: [@post, @comment], local: true) do |f|
+      = f.text_area :content, class: "form-control"
+      %br
+      = f.submit t('views.buttons.post_comment'), class: 'btn btn-success btn-sm'

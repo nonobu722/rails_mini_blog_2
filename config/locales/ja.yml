@@ -13,6 +13,8 @@ ja:
         blog_url: ブログURL
       post:
         content: 投稿内容
+      comment:
+        content: コメント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -41,6 +43,7 @@ ja:
       unfavorite: いいねをやめる
       favorite_count: いいね：%{count}人
       favorite_list: いいねしたユーザ一覧
+      comment_list: コメント一覧
     buttons:
       create: 登録
       update: 更新
@@ -56,10 +59,13 @@ ja:
       post: 投稿
       follow: フォローする
       unfollow: フォローをやめる
+      post_comment: コメントする
   notice:
     new_post: 投稿が完了しました
+    new_comment: コメントしました
   alert:
     new_post: 投稿は140字以内で入力してください 
+    new_comment: コメントを入力してください
   errors:
     format: "%{attribute}%{message}"
     messages:

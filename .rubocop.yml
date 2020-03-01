@@ -40,3 +40,6 @@ Layout/LineLength:
 
 Rails/FilePath:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 20

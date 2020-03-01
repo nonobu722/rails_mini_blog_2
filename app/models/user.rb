@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :followed, through: :active_followers
   has_many :follow, through: :passive_followers
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def email_required?
     false
