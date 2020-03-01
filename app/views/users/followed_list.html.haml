@@ -1,5 +1,4 @@
-%h1
-  = t('views.user.follow_list')
+= provide(:title, t('views.user.follow_list'))
 %table
   %tbody
     - @users.each do |user|

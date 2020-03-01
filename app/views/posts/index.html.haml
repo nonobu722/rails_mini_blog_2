@@ -1,5 +1,4 @@
-%h1
-  = t('views.top')
+= provide(:title, t('views.top'))
 %table
   %tbody
     - @posts.each do |post|

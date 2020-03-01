@@ -1,5 +1,4 @@
-%h1
-  = t('views.post.new')
+= provide(:title, t('views.post.new'))
 = render 'form', post: @post
 %br
 = link_to t('views.buttons.back'), posts_path

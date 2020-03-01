@@ -1,5 +1,4 @@
-%h1
-  = t('views.user.index')
+= provide(:title, t('views.user.index'))
 %table
   %tbody
     - @users.each do |user|

@@ -1,5 +1,4 @@
-%h1
-  = t('views.devise.registrations.login')
+= provide(:title, t('views.devise.registrations.login'))
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field.pt-3
     = f.label :name, class:'control-label'

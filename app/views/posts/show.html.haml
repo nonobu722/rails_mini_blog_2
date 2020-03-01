@@ -1,5 +1,4 @@
-%h1
-  = t('views.post.show')
+= provide(:title, t('views.post.show'))
 .pt-3
   = @post.user.name
   %br
