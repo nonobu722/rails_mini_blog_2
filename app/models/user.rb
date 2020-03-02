@@ -1,7 +1,13 @@
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
+
+  VALID_NAME_REGEX = /\A[a-zA-Z]+\z/.freeze
+  VALID_EMAIL_REGEX = /\A[\x21-\x3f\x41-\x7e]+@(?:[-a-z0-9]+\.)+[a-z]{2,}\z/i.freeze
+
   validates :name, uniqueness: true, presence: true, length: { in: 1..20 },
-                   format: { with: /\A[a-zA-Z]+\z/ }
+                   format: { with: VALID_NAME_REGEX }
   validates :profile, length: { maximum: 200 }
+  validates :email, uniqueness: true, presence: true, format: { with: VALID_EMAIL_REGEX }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -16,18 +22,7 @@ class User < ApplicationRecord
   has_many :followed, through: :active_followers
   has_many :follow, through: :passive_followers
   has_many :favorites, dependent: :destroy
-
-  def email_required?
-    false
-  end
-
-  def email_changed?
-    false
-  end
-
-  def will_save_change_to_email?
-    false
-  end
+  has_many :comments, dependent: :destroy
 
   def follow(other_user)
     active_followers.create(followed_id: other_user.id)
