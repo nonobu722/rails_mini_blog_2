@@ -17,11 +17,11 @@
 %table
   %tbody
     - @post.comments.each do |comment|
-      %tr
-        %td.card.card-body.mt-3
-          = link_to comment.user.name, user_path(comment.user.id)
-          = comment.content
-          %br
+      - if comment.content
+        %tr
+          %td.card.card-body.mt-3
+            = link_to comment.user.name, user_path(comment.user.id)
+            = comment.content
 - if user_signed_in?
   .pt-3
     = form_with(model: [@post, @comment], local: true) do |f|
