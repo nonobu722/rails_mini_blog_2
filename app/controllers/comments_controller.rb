@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.post_id = params[:post_id]
     if @comment.save
+      NotificationMailer.notify(@post.user).deliver_later
       redirect_to post_path(params[:post_id]), notice: t('notice.new_comment')
     else
       flash.now[:alert] = t('alert.new_comment')
