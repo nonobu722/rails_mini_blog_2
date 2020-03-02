@@ -67,6 +67,8 @@ ja:
   alert:
     new_post: 投稿は140字以内で入力してください 
     new_comment: コメントを入力してください
+  mail:
+    notification_subject: コメント通知
   errors:
     format: "%{attribute}%{message}"
     messages:
