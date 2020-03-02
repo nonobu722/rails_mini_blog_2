@@ -6,6 +6,10 @@
     %br/
     = f.text_field :name, autofocus: true, class: 'form-control'
   .field.pt-3
+    = f.label :email, class:'control-label'
+    %br/
+    = f.text_field :email, class: 'form-control'
+  .field.pt-3
     = f.label :password, class:'control-label'
     %br/
     = f.password_field :password, class: 'form-control'
