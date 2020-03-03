@@ -4,6 +4,8 @@
     - @posts.each do |post|
       %tr
         %td.card.card-body.mt-3
+          - if post.image? 
+            = image_tag post.image.url, alt: 'post_image', size: '100x100'
           = link_to post.user.name, user_path(post.user.id)
           = l(post.created_at, format: :long)
           %br
