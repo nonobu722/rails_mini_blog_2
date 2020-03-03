@@ -34,6 +34,7 @@ gem 'devise-i18n-views', '~> 0.3'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Use for upload image
 gem 'carrierwave', '~> 1.0'
+gem 'cloudinary'
 
 group :production do
   gem 'pg'
