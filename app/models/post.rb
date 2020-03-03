@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
   has_many :comments, dependent: :destroy
 
+  mount_uploader :image, ImagesUploader
+
   def favorite(user)
     favorites.create(user_id: user.id)
   end
