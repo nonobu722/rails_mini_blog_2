@@ -1,5 +1,8 @@
 = provide(:title, t('views.post.show'))
 .pt-3
+  - if @post.image? 
+    = image_tag @post.image.url, alt: 'post_image', size: '450x300'
+  %br
   = @post.user.name
   %br
   = l(@post.created_at, format: :long)

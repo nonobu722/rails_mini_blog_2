@@ -3,6 +3,10 @@
   .field.pt-3
     = form.label :content, class:'control-label'
     = form.text_area :content, class: 'form-control'
+  .field.pt-3
+    = form.label :image, class:'control-label'
+    %br/
+    = form.file_field :image
   .actions.pt-3
     = form.submit t('views.buttons.post'), class: 'btn btn-primary'
 %br

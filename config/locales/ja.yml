@@ -14,6 +14,7 @@ ja:
         blog_url: ブログURL
       post:
         content: 投稿内容
+        image: 画像
       comment:
         content: コメント
     errors:
