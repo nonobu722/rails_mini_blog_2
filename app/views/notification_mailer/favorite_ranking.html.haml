@@ -1,3 +1,19 @@
-= @user.name + '様'
-- @posts.each do |post|
-  = post.id
+%h5
+  = @user.name + '様'
+  %hr
+%p
+  昨日の「いいね」数ランキングをお知らせします。
+%table
+  %tbody
+    - @posts.each.with_index(1) do |post, i|
+      %tr
+        %td.card.card-body.mt-3
+          第
+          = i
+          位
+          %br
+          = t('views.post.favorite_count', :count => post.favorites.count)
+          %br
+          = post.user.name
+          %br
+          = post.content
