@@ -69,7 +69,8 @@ ja:
     new_post: 投稿は140字以内で入力してください 
     new_comment: コメントを入力してください
   mail:
-    notification_subject: コメント通知
+    notification_subject: コメント
+    favorite_ranking_subject: 昨日のいいね数ランキング
   errors:
     format: "%{attribute}%{message}"
     messages:
